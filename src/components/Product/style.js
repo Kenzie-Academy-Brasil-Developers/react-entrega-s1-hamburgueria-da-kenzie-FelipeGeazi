@@ -40,7 +40,7 @@ export const Texto = styled.div `
     font-family: "Inter";
     font-style: normal;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1rem;
 
     color: #333333;
   }
@@ -92,6 +92,7 @@ export const BtnAdicionar = styled.button `
   font-style: normal;
   font-weight: 600;
   font-size: 1rem;
+  cursor: pointer;
 
   /* identical to box height */
 

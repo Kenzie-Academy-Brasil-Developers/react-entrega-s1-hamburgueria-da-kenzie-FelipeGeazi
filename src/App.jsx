@@ -28,14 +28,18 @@ function App() {
   }, []);
 
   function showProducts(value) {
-    //setFilteredProducts(value);
+    setFilteredProducts(value);
     const itemPesquisado = products.filter(
       (item) =>
         item.category.includes(filteredProducts) ||
         item.name.includes(filteredProducts)
     );
-    setFilteredProducts([itemPesquisado]);
-    setProducts([itemPesquisado]);
+    if (itemPesquisado) {
+      setFilteredProducts(itemPesquisado);
+      setProducts(itemPesquisado);
+    } else {
+      alert("Item não encontrado!");
+    }
   }
 
   console.log(filteredProducts);
@@ -48,12 +52,9 @@ function App() {
       return item.id === productId;
     });
     console.log(itemIncluso);
-    if (itemIncluso === undefined) {
-      setCurrentSale([itemEscolhido, ...currentSale]);
-      return <Cart key={productId} currentSale={currentSale} />;
-    } else {
-      alert("Item já Incluso no carrinho");
-    }
+
+    setCurrentSale([itemEscolhido, ...currentSale]);
+    return <Cart key={productId} currentSale={currentSale} />;
   }
 
   return (

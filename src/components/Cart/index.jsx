@@ -56,15 +56,17 @@ const Cart = ({ currentSale, setCurrentSale }) => {
           <div>
             <h5>Total</h5>
             <p>
-              R$
-              {currentSale.reduce((previous, current) => {
-                return previous + current.price;
-              }, 0)}
-              ,00
+              {currentSale
+                .reduce((previous, current) => {
+                  return previous + current.price;
+                }, 0)
+                .toLocaleString("pt-br", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
             </p>
           </div>
           <RemoverTodos onClick={() => setCurrentSale([])}>
-            {" "}
             Remover Todos
           </RemoverTodos>
         </Soma>

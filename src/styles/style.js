@@ -76,6 +76,7 @@ export const ButtonPesquisar = styled.button `
   justify-content: center;
   align-items: center;
   padding: 0px 0.8rem;
+  cursor: pointer;
 
   background: #27ae60;
   /* color-primary */

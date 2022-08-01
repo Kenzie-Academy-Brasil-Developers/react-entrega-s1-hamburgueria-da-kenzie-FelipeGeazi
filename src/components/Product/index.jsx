@@ -9,7 +9,13 @@ const Product = ({ products, product, key, handleClick, filteredProducts }) => {
       <Texto>
         <h2>{product.name}</h2>
         <span>{product.category}</span>
-        <p>R$ {product.price.toFixed()},00</p>
+        <p>
+          {" "}
+          {product.price.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </p>
         <BtnAdicionar onClick={() => handleClick(product.id)}>
           Adicionar
         </BtnAdicionar>

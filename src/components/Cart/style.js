@@ -11,6 +11,29 @@ export const Carrinho = styled.aside `
   align-items: flex-start;
   max-width: 470px;
 
+  h4 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+
+    /* or 133% */
+    color: #333333;
+  }
+
+  p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 17px;
+    /* identical to box height */
+
+    /* Gray 3 */
+
+    color: #828282;
+  }
+
   @media (min-width: 700px) {
     width: 30%;
   }
@@ -106,6 +129,7 @@ export const ItemCarrinho = styled.div `
     font-style: normal;
     font-weight: 500;
     font-size: 1rem;
+    cursor: pointer;
 
     cursor: pointer;
     height: 1rem;
@@ -159,4 +183,5 @@ export const RemoverTodos = styled.button `
   line-height: 19px;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
+  cursor: pointer;
 `;
